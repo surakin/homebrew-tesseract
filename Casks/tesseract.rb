@@ -1,13 +1,13 @@
 cask "tesseract" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.9.4"
-  sha256 arm:   "24a477f2e2867ce66d9dceb989929d74898984efe59d834cb82c8ffb980b1576",
-         intel: "09c7aa011df51f0d114bacea40c3cd47c01e158d1a80e8ff5a57852c64391f10"
+  version "0.9.10"
+  sha256 arm:   "0cba879416330338bc6e9f7a2bd3e5ff783646fa475698e7be7d9bc2d0de120e",
+         intel: "420d7fd4391993492308f8f4b98de181408ac85ae8fa7e4aec6c879763d9117d"
 
   url "https://github.com/surakin/tesseract/releases/download/v#{version}/Tesseract-#{version}-#{arch}.dmg"
   name "Tesseract"
-  desc "The native desktop Matrix client you always wanted."
+  desc "Native desktop Matrix client, built on the Matrix Rust SDK"
   homepage "https://surakin.github.io/tesseract/"
 
   livecheck do
@@ -15,7 +15,7 @@ cask "tesseract" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Tesseract.app"
 
@@ -26,4 +26,3 @@ cask "tesseract" do
     "~/Library/Saved Application State/im.gnomos.tesseract.savedState",
   ]
 end
-
